@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+Myly Fabre/ Curriculum Vitae
 
-You can use the [editor on GitHub](https://github.com/mylyfabre/essaie-/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+EDUCATION	
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Colorado School of Mines                                                                      Aug. 2017 – Present
+B.S Metallurgical & Materials Engineering with specialization in Materials Processing.
+Coursework in Progress:  Computational Materials, Shape Memory Alloy, Corporate Social Responsibility.
+Coursework Completed:  Thermodynamics, Engineering Materials, Organic Chemistry I & II
+Research Assistance: Supervisor Dr. Stebner Araon (Advanced Shape Memory Alloy design). Currently studying alloys particularly Nitinol materials that can used for the design of brace for spinal correction. 
 
-### Markdown
+Miami Dade College                                                                                                  Jan. 2015 – July 2017  Graduated with A.A. in Chemical Engineering with interest in Organic & Surface Chemistry. 
+Research Assistance: Supervisor Dr. Pina. Maria at Saint-Thomas University. Analyzed Macronutrients found in Okinawan Spinach Soil and in Fertilizers. Designed and built other methods to evaluate total nitrogen percentage in Soil. Reduced cost, line through time, Work-In-Progress and other lead-time for evaluation of samples.
+Other:  Problem Solving using C, Linear Algebra, Organic Chemistry I& II, Spanish III. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mylyfabre/essaie-/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
