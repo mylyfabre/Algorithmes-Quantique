@@ -1,2 +1,15 @@
 theme = "hugo-theme-console"
 title= "Lawyer Hugi Grotius" 
+mainSections = ["blog'] 
+paginate = 4 
+
+[params] 
+author =" Hugo de Groot" 
+siteheading ="Hugo Grotius " 
+showTaxonomyLinks = false 
+nBlogLatest = 4 
+blogLatestheading = "My writing" 
+
+[params.social] 
+github ="example" 
+linkedin= "example @ example.com " 
