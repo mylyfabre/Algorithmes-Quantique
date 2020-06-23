@@ -1,3 +1,4 @@
+baseURL ="https://mylyfabre.github.io/eportfolio/"
 languageCode="en-us" 
 title = "notrack"
 newContentEditor= "nvim" 
