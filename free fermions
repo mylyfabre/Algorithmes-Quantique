@@ -1,0 +1,117 @@
+import cirq 
+import copy
+import numpy as np
+import matplotlib.pyplot as plt
+import time
+from multiprocessing import *
+from functools import reduce
+import requests
+q = [cirq.NamedQubit('q' + str(i)) for i in range(6)]
+
+circuit = cirq.Circuit(
+    cirq.X(q[0]),
+    cirq.X(q[2]),
+    cirq.X(q[4]),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.ISWAP(q[2], q[3]),
+    cirq.ISWAP(q[4], q[5]),
+    cirq.ISWAP(q[1], q[2]),
+    cirq.ISWAP(q[3], q[4]),
+    cirq.Moment(
+    cirq.rz(np.pi / 4)(q[2]),
+    cirq.rz(np.pi / 4)(q[4]),
+    cirq.rz(np.pi / 4)(q[0]))
+)
+
+simulator = cirq.Simulator()
+#result = simulator.run(circuit, repetitions=1024)
+#result_dict = dict(result.multi_measurement_histogram(keys=[]))
+#keys = list(map(lambda arr: reduce(lambda x, y: str(x) + str(y), arr[::-1]), result_dict.keys()))
+#counts = dict(zip(keys,[value for value in result_dict.values()]))
+#print(counts)
+print(circuit)
+
+q0: ───X───iSwap───────────Rz(0.25π)───
+           │
+q1: ───────iSwap───iSwap───────────────
+                   │
+q2: ───X───iSwap───iSwap───Rz(0.25π)───
+           │
+q3: ───────iSwap───iSwap───────────────
+                   │
+q4: ───X───iSwap───iSwap───Rz(0.25π)───
+           │
+q5: ───────iSwap───────────────────────
+
+q = [cirq.NamedQubit('q' + str(i)) for i in range(2)]
+
+circuit = cirq.Circuit(
+    cirq.rz(-np.pi / 4)(q[0]),
+    cirq.rz(np.pi / 4)(q[1]),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.rz(0)(q[0]),
+    cirq.rz(0)(q[1]),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.rz(np.pi / 4)(q[0]),
+    cirq.rz(-np.pi / 4)(q[1]),
+    cirq.measure(q[0], key='c0'),
+    cirq.measure(q[1], key='c1')
+)
+
+simulator = cirq.Simulator()
+result = simulator.run(circuit, repetitions=1024)
+result_dict = dict(result.multi_measurement_histogram(keys=['c0', 'c1']))
+keys = list(map(lambda arr: reduce(lambda x, y: str(x) + str(y), arr[::-1]), result_dict.keys()))
+counts = dict(zip(keys,[value for value in result_dict.values()]))
+print("The Circuit Composer is: ")
+print(circuit)
+print(counts)
+plot=cirq.plot_state_histogram(result)
+########################################
+circuit = cirq.Circuit(cirq.X(q[0]),
+                       cirq.Moment(
+    cirq.rz(-np.pi / 4)(q[0]),
+    cirq.rz(np.pi / 4)(q[1])),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.rz(0)(q[0]),
+    cirq.rz(0)(q[1]),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.rz(np.pi / 4)(q[0]),
+    cirq.rz(-np.pi / 4)(q[1]),
+    cirq.measure(q[0], key='c0'),
+    cirq.measure(q[1], key='c1')
+)
+
+simulator = cirq.Simulator()
+result = simulator.run(circuit, repetitions=1024)
+result_dict = dict(result.multi_measurement_histogram(keys=['c0', 'c1']))
+keys = list(map(lambda arr: reduce(lambda x, y: str(x) + str(y), arr[::-1]), result_dict.keys()))
+counts = dict(zip(keys,[value for value in result_dict.values()]))
+print("The Circuit Composer is: ")
+print(circuit)
+print(counts)
+plot=cirq.plot_state_histogram(result)
+###########################################
+circuit = cirq.Circuit(cirq.X(q[1]),
+                       cirq.Moment(
+    cirq.rz(-np.pi / 4)(q[0]),
+    cirq.rz(np.pi / 4)(q[1])),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.rz(0)(q[0]),
+    cirq.rz(0)(q[1]),
+    cirq.ISWAP(q[0], q[1]),
+    cirq.rz(np.pi / 4)(q[0]),
+    cirq.rz(-np.pi / 4)(q[1]),
+    cirq.measure(q[0], key='c0'),
+    cirq.measure(q[1], key='c1')
+)
+
+simulator = cirq.Simulator()
+result = simulator.run(circuit, repetitions=1024)
+result_dict = dict(result.multi_measurement_histogram(keys=['c0', 'c1']))
+keys = list(map(lambda arr: reduce(lambda x, y: str(x) + str(y), arr[::-1]), result_dict.keys()))
+counts = dict(zip(keys,[value for value in result_dict.values()]))
+print("The Circuit Composer is: ")
+print(circuit)
+print(counts)
+plot=cirq.plot_state_histogram(result)
