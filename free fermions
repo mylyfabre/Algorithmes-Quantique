@@ -1,8 +1,0 @@
-import cirq 
-import copy
-import numpy as np
-import matplotlib.pyplot as plt
-import time
-from multiprocessing import *
-from functools import reduce
-import requests
